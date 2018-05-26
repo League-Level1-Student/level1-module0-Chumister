@@ -31,30 +31,65 @@ public class BodyPartQuiz {
 	private void startQuiz() {
 
 		// 1. Make an int variable to hold the score.
+		String name;
+		int score = 0;
+		int totals = 0;
+		
 
 		// 2. Set the size of the window in the initializeGui() method below
 
 		for (int i = 0; i < 4; i++) {
 			
 			// 4. Ask the user who this person is and store their answer
-			String guess= JOptionPane.showInputDialog("who is this?");
+			String firstImage= JOptionPane.showInputDialog("who is this?");
 			
 			// 5. Check their answer. If they guessed correctly:
 			// -- Tell them they are right and increase the score by 1
+if(firstImage.equals("Arnold")) {
+	score++;
+JOptionPane.showMessageDialog(null, "You're right!");
 
-			// 6. Otherwise:
-			// -- Tell them they are wrong and who the person is
 
-			// 7. Use the showNextImage() method below to get the next image
-			showNextImage();
-		    // 8. Show them their current score
 			
-			// 9. .... repeat for all your images.....
-
-
+			showNextImage();
+		    
 		}
+		if(secondImage.equals("Leonardo")) {
+			score++;
+		JOptionPane.showMessageDialog(null, "You're right!");
+		
+	
 
+					
+					showNextImage();
+				    
+					if(thirdImage.equals("Morgan")) {
+						score++;
+					JOptionPane.showMessageDialog(null, "You're right!");
+					}
+					
+								showNextImage();
+	
+							
+	if(fourthImage.equals("Jack")) {
+		score++;
+	JOptionPane.showMessageDialog(null, "You're right!");
 	}
+	else {
+		JOptionPane.showMessageDialog(null, "WRONG!");
+
+	
+
+				// 6. Otherwise:
+				// -- Tell them they are wrong and who the person is
+				// 7. Use the showNextImage() method below to get the next image
+				showNextImage();
+			    // 8. Show them their current score
+				
+				// 9. .... repeat for all your images.....
+}
+		}}}
+
 
 	public void showNextImage() {
 		panel.removeAll();
