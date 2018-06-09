@@ -1,3 +1,4 @@
+
 /*
  *    Copyright (c) The League of Amazing Programmers 2013-2017
  *    Level 1
@@ -15,18 +16,19 @@ import javax.swing.JPanel;
 
 public class BodyPartQuiz {
 
-	// 0. You can use the celebrity photos we have placed in the default java package,  
-	// or if you prefer, get celebrity photos from the Internet, place them in the default
+	// 0. You can use the celebrity photos we have placed in the default java
+	// package,
+	// or if you prefer, get celebrity photos from the Internet, place them in the
+	// default
 	// package, and change the names below.
-	
+
 	String firstImage = "src/arnold.jpeg";
 	String secondImage = "src/leonardo.jpeg";
 	String thirdImage = "src/morgan.jpeg";
 	String fourthImage = "src/jack.jpeg";
-	
+
 	JFrame window = new JFrame();
 	JPanel panel = new JPanel();
-
 
 	private void startQuiz() {
 
@@ -34,77 +36,55 @@ public class BodyPartQuiz {
 		String name;
 		int score = 0;
 		int totals = 0;
-		
 
 		// 2. Set the size of the window in the initializeGui() method below
 
 		for (int i = 0; i < 4; i++) {
-		}
+
 			// 4. Ask the user who this person is and store their answer
-			String firstImage= JOptionPane.showInputDialog("who is this?");
-			
+			String Answer = JOptionPane.showInputDialog("who is this?");
+
 			// 5. Check their answer. If they guessed correctly:
 			// -- Tell them they are right and increase the score by 1
-if(firstImage.equals("Arnold")) {
-	score++;
-JOptionPane.showMessageDialog(null, "You're right!");
-
-
-			
-			showNextImage();
-					
-		}
-if(secondImage.equals("Leonardo")) {
-	score++;
-JOptionPane.showMessageDialog(null, "You're right!");
-
-
-
-			
-			showNextImage();
-}
-
-		   
-
-		
-			if(thirdImage.equals("Morgan")) {
+			if (Answer.equals("Arnold")) {
 				score++;
-			JOptionPane.showMessageDialog(null, "You're right!");
-			
-			
-			
-						showNextImage();
+				JOptionPane.showMessageDialog(null, "You're right!");
+
+				showNextImage();
+
+			} else if (Answer.equals("Leonardo")) {
+				score++;
+				JOptionPane.showMessageDialog(null, "You're right!");
+
+				showNextImage();
+			} else
+
+			if (Answer.equals("Morgan")) {
+				score++;
+				JOptionPane.showMessageDialog(null, "You're right!");
+
+				showNextImage();
+			} else
+
+			if (Answer.equals("Jack")) {
+				score++;
+				JOptionPane.showMessageDialog(null, "You're right!");
+
 			}
-			
-					
-if(fourthImage.equals("Jack")) {
-score++;
-JOptionPane.showMessageDialog(null, "You're right!");
 
+			else {
+				JOptionPane.showMessageDialog(null, "WRONG!");
 
-}
-		   
+				showNextImage();
 
-else {
-	JOptionPane.showMessageDialog(null, "WRONG!");
-
-			
-	showNextImage();
-
-}
-		
-	
-
-
+			}
 		}
-	
 
-	
-
+	}
 
 	public void showNextImage() {
 		panel.removeAll();
-		panel.add(getNextImage());		
+		panel.add(getNextImage());
 		window.setVisible(true);
 	}
 
@@ -119,12 +99,12 @@ else {
 		imageIterator = imageList.iterator();
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.add(panel);
-		
-		// 3. Change the size of the window so that you can only see part of the image.		
-		window.setSize(500,500);
-		
+
+		// 3. Change the size of the window so that you can only see part of the image.
+		window.setSize(500, 500);
+
 		showNextImage();
-		
+
 	}
 
 	private JLabel loadImage(String fileName) {
