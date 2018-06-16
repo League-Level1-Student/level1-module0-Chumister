@@ -21,6 +21,7 @@ import javax.swing.JPanel;
 public class DrumKit<Sandi> implements MouseListener {
 
     JLabel drumLabelWithImage;
+	private Object panelLabelWithImage;
 
     public static void main(String[] args) throws Exception {
    	 new DrumKit().getGoing();
@@ -49,10 +50,10 @@ frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 drumLabelWithImage = createLabelImage(picture);
    	 
    	 // 10. Add the image to the panel
-    
+    panelLabelWithImage = addLabelImage();
    	 // 11. Set the layout of the panel to "new GridLayout()"
-    
-      	 // 12. call the pack() method on the frame.  Run your program. Do you see your drum image?
+
+    // 12. call the pack() method on the frame.  Run your program. Do you see your drum image?
    	  
    	 // 13. add this mouse listener to drumLabelWithImage
     	
@@ -60,7 +61,12 @@ drumLabelWithImage = createLabelImage(picture);
 
     }
 
-    public void mouseClicked(MouseEvent e) {
+    private Object addLabelImage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void mouseClicked(MouseEvent e) {
    	 // 14. Print "mouse clicked" to the console. Run your program and watch the console to see when this is printed.
 
    	 JLabel drumClicked = (JLabel) e.getSource();  // This line gets the label that the mouse clicked on
