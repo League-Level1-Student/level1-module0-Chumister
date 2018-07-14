@@ -30,7 +30,6 @@ public class PhotoQuiz {
 		// 4. add the image to the quiz window
         	quizWindow.add(Smash);
 		// 5. call the pack() method on the quiz window
-        	quizWindow.pack();
 		// 6. ask a question that relates to the image
        
         String Tendo=JOptionPane.showInputDialog("What is this series?");
@@ -44,15 +43,26 @@ public class PhotoQuiz {
         	else {
 				JOptionPane.showMessageDialog(null,"INCORRECT!!");
 			}// 10. find another image and create it (might take more than one line of code)
-        	
+        	String url2 = "https://cdn.images.express.co.uk/img/dynamic/36/590x/avengers-infinity-war-mcu-movies-ranked-951058.jpg";
 		// 11. add the second image to the quiz window
-
+        	Component Marvel;
 		// 12. pack the quiz window
-
+        	Marvel=createImage(url2);
 		// 13. ask another question
-
+        	String MCU=JOptionPane.showInputDialog("What is this series?");
+    		// 7. print "CORRECT" if the user gave the right answer
+            	if(MCU.equals("Marvel Cinematic Universe")) {
+            	JOptionPane.showMessageDialog(null, "CORRECT!!");	
+    		// 8. print "INCORRECT" if the answer is wrong
+            	
+    		// 9. remove the component from the quiz window (you may not see the effect of this until step 12)
+            	}
+            	else {
+    				JOptionPane.showMessageDialog(null,"INCORRECT!!");
+    			}
+        	quizWindow.add(Marvel);
 		// 14+ check answer, say if correct or incorrect, etc.
-
+        		quizWindow.pack();
 	}
 
 	private static Component createImage(String imageUrl) throws MalformedURLException {
@@ -64,7 +74,9 @@ public class PhotoQuiz {
 
 	/* OPTIONAL */
 	// *14. add scoring to your quiz
+	
 	// *15. make something happen when mouse enters image (imageComponent.addMouseMotionListener()) 
+	
 }
 
 
